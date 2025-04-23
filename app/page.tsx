@@ -1,17 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import Acerca from "../components/about"; 
+import Installation from "../components/installation";
+import Beneficios from "@/components/benefits";
 
-const slides = [
-  { id: 1, text: "whatevr", image: "/images/lolo.png" },
-  { id: 2, text: "whatever 1", image: "/images/lolo.png" },
-  { id: 3, text: "whatever 2", image: "/images/lolo.png" },
-];
 
 export default function Home() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -31,39 +24,58 @@ export default function Home() {
     sessionStorage.setItem("popupDismissed", "true");
   };
 
+  const handleScrollToConoceMas = () => {
+    const section = document.getElementById("acerca");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const acercaImages = [
+    "/images/cisterna1.png",
+    "/images/cisterna1.png",
+    "/images/cisterna1.png",
+    "/images/cisterna1.png",
+    "/images/cisterna1.png",
+    "/images/cisterna1.png",
+  ];
+
   return (
-    <div className="text-center">
-      {/* Swiper Section */}
-      <div className="relative mx-auto w-full sm:w-[90%] md:w-[80%] lg:w-[70%]">
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          loop={true}
-          className="swiper-container"
-        >
-          {slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <div className="relative">
-                <img
-                  src={slide.image}
-                  alt={slide.text}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-  <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold drop-shadow-lg">
-    {slide.text}
-  </h2>
-</div>
+    <div className="text-center bg-white">
+      {/* Hero Section */}
+      <div className="flex flex-col lg:flex-row items-center justify-between w-full p-8 lg:p-16">
+        {/* Text Section */}
+        <div className="lg:w-1/2 text-left lg:pl-8 space-y-4">
+          <h1 className="text-4xl lg:text-6xl font-extrabold text-[#007697]">
+            CISTERNA VERTICAL INTELIGENTE
+          </h1>
+          <p className="text-lg lg:text-xl font-medium text-gray-700">
+            IDEAL PARA DEPARTAMENTOS, CASAS, OFICINAS O NEGOCIOS,{" "}
+            <span className="font-bold text-black">SIN EXCAVACIONES,</span> INSTALACIÓN EN{" "}
+            <span className="font-bold text-black">30 MINUTOS</span>
+          </p>
+          <button
+            onClick={handleScrollToConoceMas}
+            className="mt-6 py-3 px-6 bg-[#84AAAF] text-white font-bold rounded-md hover:bg-[#007697] transition"
+          >
+            CONOCE MÁS
+          </button>
+        </div>
 
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* Image Section */}
+        <div className="lg:w-1/2 mt-8 lg:mt-0">
+          <img
+            src="/images/cisternavertical.png"
+            alt="Cisterna Vertical Inteligente"
+            className="w-full max-w-lg mx-auto"
+            loading="lazy"
+          />
+        </div>
       </div>
-
+      {/* Quienes Somos Section */}
+      <Acerca images={acercaImages} />
+      <Beneficios />
+      <Installation />
       {/* Popup Section */}
       {isPopupVisible && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -123,7 +135,6 @@ export default function Home() {
                   />
                 </div>
               </div>
-
 
               <div className="mt-8">
                 <button

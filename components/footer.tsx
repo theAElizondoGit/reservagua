@@ -13,7 +13,7 @@ export default function Footer() {
   if (!isMounted) return null; // Render nothing until hydration is complete.
 
   return (
-    <footer className="bg-[#2c72a6] text-white py-8">
+    <footer className="bg-[black] text-white py-8">
 
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
         {/* Contact Info */}

@@ -31,6 +31,7 @@ export default function Store() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const categories = ["todas", "aire", "descanso", "agua", "repuestos"];
+  const [inquiryProduct, setInquiryProduct] = useState<Product | null>(null);
 
   // Fetch products dynamically from Redis API
 useEffect(() => {
@@ -131,6 +132,7 @@ useEffect(() => {
                     </p>
 
                     {/* ✅ Add to Cart Button */}
+                    {/* 
                     <button
                       className="mt-4 w-full bg-primary text-white py-2 px-4 rounded hover:bg-accent transition"
                       onClick={(e) => {
@@ -147,6 +149,17 @@ useEffect(() => {
                     >
                       Añadir al carrito
                     </button>
+                    */}
+                    <button
+                      className="mt-4 w-full bg-[#007697] text-white py-2 px-4 rounded hover:bg-[#005c74] transition"
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent card click navigation
+                        setInquiryProduct(product); // Show the form
+                      }}
+                    >
+                      Contáctanos
+                    </button>
+
                   </div>
                 </div>
               ))
@@ -156,6 +169,48 @@ useEffect(() => {
           </div>
         </div>
       </div>
+      {/* Contact Form Modal */}
+      {inquiryProduct && (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg max-w-lg w-full text-left relative">
+            <button
+              className="absolute top-2 right-4 text-gray-500 hover:text-black text-xl"
+              onClick={() => setInquiryProduct(null)}
+            >
+              &times;
+            </button>
+
+            <h2 className="text-xl font-bold mb-4">Consulta por: {inquiryProduct.name}</h2>
+            <form
+              action="mailto:reservagua@example.com" // replace with real email or use email handler
+              method="POST"
+              encType="text/plain"
+              className="space-y-4"
+            >
+              <div>
+                <label className="block text-sm text-gray-700 mb-1">Nombre</label>
+                <input type="text" name="name" required className="w-full border border-gray-300 rounded px-3 py-2" />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-700 mb-1">Correo</label>
+                <input type="email" name="email" required className="w-full border border-gray-300 rounded px-3 py-2" />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-700 mb-1">Mensaje</label>
+                <textarea
+                  name="message"
+                  rows={4}
+                  defaultValue={`Hola! Quisiera saber más del producto ${inquiryProduct.name}. ¡Gracias!`}
+                  className="w-full border border-gray-300 rounded px-3 py-2"
+                />
+              </div>
+              <button type="submit" className="bg-[#007697] text-white px-4 py-2 rounded hover:bg-[#005c74]">
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
