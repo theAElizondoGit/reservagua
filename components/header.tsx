@@ -31,11 +31,12 @@ export default function Header() {
         <div className="flex items-center space-x-8">
           <Link href="/" className="flex items-center no-underline">
           <img
-            src="images/logo.png"
+            src="/images/logo.png"
             alt="Reservagua Logo"
-            className="max-h-8 sm:max-h-8 lg:max-h-64 w-auto object-contain"
+            className="h-48 sm:h-52 lg:h-64 w-auto object-contain max-w-[250px]"
             style={{ transformOrigin: "left center" }}
           />
+
           </Link>
 
           <nav className="hidden md:flex items-center space-x-4">

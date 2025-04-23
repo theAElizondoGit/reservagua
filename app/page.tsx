@@ -35,9 +35,6 @@ export default function Home() {
     "/images/cisterna1.png",
     "/images/cisterna1.png",
     "/images/cisterna1.png",
-    "/images/cisterna1.png",
-    "/images/cisterna1.png",
-    "/images/cisterna1.png",
   ];
 
   return (
