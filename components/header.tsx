@@ -1,22 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { useCart } from "../context/CartContext"; // Import Cart Context
-import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+//import { useCart } from "../context/CartContext"; // Import Cart Context
+//import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 
 export default function Header() {
-  const [isClient, setIsClient] = useState(false);
+  //const [isClient, setIsClient] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { cart, toggleCart } = useCart();
-
+  //const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  //const { cart, toggleCart } = useCart();
+{/*
   useEffect(() => {
     setIsClient(true); // Ensures the component re-renders only on the client
   }, []);
 
   const categories = ["Todas", "Aire", "Agua", "Descanso", "Repuestos"];
-
+*/}
   const navLinks = [
     { name: "Acerca", href: "#acerca", type: "scroll" },
     { name: "Beneficios", href: "#beneficios", type: "scroll" },

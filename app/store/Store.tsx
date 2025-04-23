@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCart } from "@/context/CartContext"; // ✅ Import Cart Context
+//import { useCart } from "@/context/CartContext"; // ✅ Import Cart Context
 
 // ✅ Define Product Type
 interface Product {
@@ -16,14 +16,14 @@ interface Product {
   price: number;
   sizes?: string[]; // ✅ Add optional sizes field
 }
-
+{/* 
 interface CartItem extends Product {
   selectedSize?: string; // ✅ Optional, only for products with sizes
   quantity: number; // ✅ Required field for cart
 }
-
+*/}
 export default function Store() {
-  const { addToCart } = useCart();
+  //const { addToCart } = useCart();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
