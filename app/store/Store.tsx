@@ -180,28 +180,31 @@ useEffect(() => {
               &times;
             </button>
 
-            <h2 className="text-xl font-bold mb-4">Consulta por: {inquiryProduct.name}</h2>
+            <h2 className="text-xl text-black font-bold mb-4">Consulta por: {inquiryProduct.name}</h2>
             <form
-              action="mailto:reservagua@example.com" // replace with real email or use email handler
+              action="https://formsubmit.co/jrf2421@gmail.com"
               method="POST"
-              encType="text/plain"
               className="space-y-4"
             >
+              {/* Optional: Prevent spam */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="Nueva consulta desde la tienda" />
+              <input type="hidden" name="_template" value="table" />
               <div>
-                <label className="block text-sm text-gray-700 mb-1">Nombre</label>
-                <input type="text" name="name" required className="w-full border border-gray-300 rounded px-3 py-2" />
+                <label className="block text-sm text-black mb-1">Nombre</label>
+                <input type="text" name="name" required className="w-full border border-gray-300 rounded px-3 py-2 text-black" />
               </div>
               <div>
-                <label className="block text-sm text-gray-700 mb-1">Correo</label>
-                <input type="email" name="email" required className="w-full border border-gray-300 rounded px-3 py-2" />
+                <label className="block text-sm text-black mb-1">Correo</label>
+                <input type="email" name="email" required className="w-full border border-gray-300 rounded px-3 py-2 text-black" />
               </div>
               <div>
-                <label className="block text-sm text-gray-700 mb-1">Mensaje</label>
+                <label className="block text-sm text-black mb-1">Mensaje</label>
                 <textarea
                   name="message"
                   rows={4}
                   defaultValue={`Hola! Quisiera saber más del producto ${inquiryProduct.name}. ¡Gracias!`}
-                  className="w-full border border-gray-300 rounded px-3 py-2"
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-black"
                 />
               </div>
               <button type="submit" className="bg-[#007697] text-white px-4 py-2 rounded hover:bg-[#005c74]">
