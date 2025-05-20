@@ -1,14 +1,8 @@
 "use client";
 
-import { useState } from "react";
 
 export default function Installation() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  
 
   return (
     <section
