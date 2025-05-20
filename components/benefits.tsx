@@ -18,6 +18,21 @@ export default function Beneficios() {
           Con una instalación rápida en solo <span className="font-bold">30 minutos</span>, y sin la necesidad de obras mayores, 
           garantiza un almacenamiento eficiente del agua con un mantenimiento mínimo.
         </p>
+        {/* Video Section */}
+        <div className="w-full px-0 lg:px-8 my-12">
+          <div className="relative pb-[56.25%] h-0 rounded-lg overflow-hidden shadow-lg">
+            <video
+              className="absolute top-0 left-0 w-full h-full"
+              controls
+              autoPlay
+              muted
+              playsInline
+            >
+              <source src="/videos/reservagua.mp4" type="video/mp4" />
+              Tu navegador no soporta el video.
+            </video>
+          </div>
+        </div>
 
         {/* Comparison Table */}
         <div className="overflow-x-auto">

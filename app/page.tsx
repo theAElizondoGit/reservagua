@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Acerca from "../components/about"; 
 import Installation from "../components/installation";
 import Beneficios from "@/components/benefits";
+import Contact from "../components/contact";
 
 
 export default function Home() {
@@ -75,6 +76,8 @@ export default function Home() {
       <Acerca images={acercaImages} />
       <Beneficios />
       <Installation />
+      <Contact />
+
       {/* Popup Section */}
       {isPopupVisible && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
