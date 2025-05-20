@@ -40,6 +40,7 @@ export default function Home() {
   return (
     <div className="text-center bg-white">
       {/* Hero Section */}
+      <div className="pt-32 lg:pt-36">
       <div className="flex flex-col lg:flex-row items-center justify-between w-full p-8 lg:p-16">
         {/* Text Section */}
         <div className="lg:w-1/2 text-left lg:pl-8 space-y-4">
@@ -68,6 +69,7 @@ export default function Home() {
             loading="lazy"
           />
         </div>
+      </div>
       </div>
       {/* Quienes Somos Section */}
       <Acerca images={acercaImages} />

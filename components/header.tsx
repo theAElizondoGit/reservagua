@@ -26,7 +26,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-[white] text-black font-semibold tracking-wide h-28 flex items-center">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white text-black font-semibold tracking-wide h-28 flex items-center shadow-md">
       <div className="container flex items-center justify-between py-4 relative">
         <div className="flex items-center space-x-8">
           <Link href="/" className="flex items-center no-underline">
@@ -40,16 +40,18 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-4">
-            {navLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.href}
-                className="text-gray-700 hover:text-black font-medium transition no-underline"
-                scroll={link.type === "scroll"}
-              >
-                {link.name}
-              </Link>
-            ))}
+          {navLinks.map((link, index) => (
+            <Link
+              key={index}
+              href={link.href}
+              className={`text-gray-700 hover:text-black font-medium transition no-underline px-3 ${
+                index !== 0 ? "border-l border-gray-400" : ""
+              }`}
+              scroll={link.type === "scroll"}
+            >
+              {link.name}
+            </Link>
+          ))}
           </nav>
         </div>
 
