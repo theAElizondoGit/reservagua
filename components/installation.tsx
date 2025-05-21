@@ -3,6 +3,20 @@
 export default function Installation() {
   return (
     <section id="instalacion" className="py-12 px-6 lg:py-16 lg:px-24">
+      <div className="container mx-auto text-center lg:text-left mb-12">
+        <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 text-[#0245c1]">
+          Instalación
+        </h2>
+        <p className="text-lg lg:text-xl font-medium mb-6 text-black">
+          Nuestro equipo de profesionales está listo para instalar su{" "}
+          <span className="font-bold">Cisterna Vertical Inteligente</span> en su hogar, oficina o negocio. 
+          Garantizamos una instalación rápida y eficiente, sin necesidad de excavaciones y en tan solo{" "}
+          <span className="font-bold">30 minutos</span>.
+        </p>
+        <p className="text-lg lg:text-xl font-medium text-black">
+          Contáctenos hoy mismo para recibir más información sobre la instalación y nuestros servicios adicionales.
+        </p>
+      </div>
       <div className="bg-[#0245c1] border-4 border-[#ac5358] rounded-lg p-8 lg:p-12 text-white text-center">
         <h2 className="text-3xl lg:text-4xl font-extrabold mb-10">
           ¿Qué requiere para su instalación?

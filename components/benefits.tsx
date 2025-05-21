@@ -8,7 +8,7 @@ export default function Beneficios() {
     >
       <div className="container mx-auto text-center lg:text-left">
         <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 text-[#0245c1]">
-          Beneficios de la Cisterna Vertical Inteligente
+          Beneficios
         </h2>
         <p className="text-lg lg:text-xl font-medium mb-6">
           La <span className="font-bold">Cisterna Vertical Inteligente</span> ofrece múltiples ventajas en comparación con las cisternas tradicionales. 
