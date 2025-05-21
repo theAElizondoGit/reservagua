@@ -45,7 +45,7 @@ export default function Home() {
       <div className="flex flex-col lg:flex-row items-center justify-between w-full p-8 lg:p-16">
         {/* Text Section */}
         <div className="lg:w-1/2 text-left lg:pl-8 space-y-4">
-          <h1 className="text-4xl lg:text-6xl font-extrabold text-[#007697]">
+          <h1 className="text-4xl lg:text-6xl font-extrabold text-[#0245c1]">
             CISTERNA VERTICAL INTELIGENTE
           </h1>
           <p className="text-lg lg:text-xl font-medium text-gray-700">
@@ -55,7 +55,7 @@ export default function Home() {
           </p>
           <button
             onClick={handleScrollToConoceMas}
-            className="mt-6 py-3 px-6 bg-[#84AAAF] text-white font-bold rounded-md hover:bg-[#007697] transition"
+            className="mt-6 py-3 px-6 bg-[#0245c1] text-white font-bold rounded-md hover:bg-[#007697] transition"
           >
             CONOCE MÁS
           </button>

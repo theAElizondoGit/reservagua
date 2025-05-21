@@ -7,7 +7,7 @@ export default function Beneficios() {
       className="bg-white text-gray-800 py-12 px-6 lg:py-16 lg:px-24"
     >
       <div className="container mx-auto text-center lg:text-left">
-        <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 text-[#007697]">
+        <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 text-[#0245c1]">
           Beneficios de la Cisterna Vertical Inteligente
         </h2>
         <p className="text-lg lg:text-xl font-medium mb-6">
@@ -38,7 +38,7 @@ export default function Beneficios() {
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
             <thead>
-              <tr className="bg-[#007697] text-white">
+              <tr className="bg-[#0245c1] text-white">
                 <th className="py-4 px-6">Característica</th>
                 <th className="py-4 px-6">Cisterna Vertical Inteligente</th>
                 <th className="py-4 px-6">Cisterna Tradicional</th>

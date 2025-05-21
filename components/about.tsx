@@ -11,7 +11,7 @@ export default function Acerca({ images }: AcercaProps) {
       className="bg-whitetext-gray-800 py-12 px-6 lg:py-16 lg:px-24"
     >
       <div className="container mx-auto text-center lg:text-left">
-        <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 text-[#007697]">
+        <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 text-[#0245c1]">
           Reservagua
         </h2>
         <p className="text-black text-lg lg:text-xl font-medium mb-6">

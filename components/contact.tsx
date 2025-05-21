@@ -30,7 +30,7 @@ export default function Contact() {
       className="bg-white text-black py-12 px-6 lg:py-16 lg:px-24"
     >
       <div className="container mx-auto">
-        <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 text-[#007697] text-center lg:text-left">
+        <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 text-[#0245c1] text-center lg:text-left">
           Contáctanos
         </h2>
         <p className="text-lg lg:text-xl font-medium mb-10 text-center lg:text-left">
@@ -131,7 +131,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#84AAAF] text-white font-bold rounded-md hover:bg-[#007697] transition"
+                  className="w-full py-3 bg-[#0245c1] text-white font-bold rounded-md hover:bg-[#007697] transition"
                 >
                   Enviar Mensaje
                 </button>
