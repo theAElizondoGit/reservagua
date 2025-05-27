@@ -77,7 +77,7 @@ useEffect(() => {
   }
 
   return (
-<div className="container mx-auto mt-48 py-8 overflow-hidden">
+<div className="container mx-auto mt-32 py-8 overflow-hidden">
 
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar */}

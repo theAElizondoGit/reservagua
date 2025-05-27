@@ -19,7 +19,7 @@ export default function Footer() {
         {/* Contact Info */}
         <div className="text-center md:text-left">
           <h3 className="text-sm font-semibold md:text-lg">Contacto</h3>
-          <p className="text-xs md:text-sm">Teléfono: +52 (placeholder)</p>
+          <p className="text-xs md:text-sm">Teléfono: +52 55 2560 2504</p>
           <p className="text-xs md:text-sm">Correo: correo@placeholder.com</p>
         </div>
 
