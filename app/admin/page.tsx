@@ -337,15 +337,26 @@ const handleSaveChanges = async () => {
 
   return (
     <div className="min-h-screen bg-white text-[#19333F] p-6">
-      <h1 className="text-black text-2xl font-bold">Admin Dashboard</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-      <button onClick={handleProductosClick} className="bg-blue-600 text-white py-3 px-6 rounded-md">
-        Productos
-      </button>
-        <button onClick={handleBlogClick} className="bg-blue-600 text-white py-3 px-6 rounded-md">
-          Blog
-        </button>
-      </div>
+  <h1 className="text-black text-2xl font-bold">Admin Dashboard</h1>
+
+  {/* Spacer before buttons */}
+  <div className="mt-24" />
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <button
+      onClick={handleProductosClick}
+      className="bg-blue-600 text-white py-3 px-6 rounded-md z-[9999]"
+    >
+      Productos
+    </button>
+    <button
+      onClick={handleBlogClick}
+      className="bg-blue-600 text-white py-3 px-6 rounded-md z-[9999]"
+    >
+      Blog
+    </button>
+  </div>
+
 
       {showBlog && (
         <div className="mt-6">
