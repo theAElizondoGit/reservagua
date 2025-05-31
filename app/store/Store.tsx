@@ -183,35 +183,70 @@ useEffect(() => {
 
             <h2 className="text-xl text-black font-bold mb-4">Consulta por: {inquiryProduct.name}</h2>
             <form
-              action="https://formsubmit.co/jrf2421@gmail.com"
-              method="POST"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                const name = formData.get("name") as string;
+                const email = formData.get("email") as string;
+                const message = formData.get("message") as string;
+
+                const response = await fetch("/api/inquiry", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    name,
+                    email,
+                    message,
+                    productName: inquiryProduct?.name,
+                  }),
+                });
+
+                const res = await response.json();
+                if (res.success) {
+                  alert("✅ Mensaje enviado correctamente");
+                  setInquiryProduct(null);
+                } else {
+                  alert("❌ Error al enviar el mensaje");
+                }
+              }}
               className="space-y-4"
             >
-              {/* Optional: Prevent spam */}
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_subject" value="Nueva consulta desde la tienda" />
-              <input type="hidden" name="_template" value="table" />
               <div>
                 <label className="block text-sm text-black mb-1">Nombre</label>
-                <input type="text" name="name" required className="w-full border border-gray-300 rounded px-3 py-2 text-black" />
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-black"
+                />
               </div>
               <div>
                 <label className="block text-sm text-black mb-1">Correo</label>
-                <input type="email" name="email" required className="w-full border border-gray-300 rounded px-3 py-2 text-black" />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-black"
+                />
               </div>
               <div>
                 <label className="block text-sm text-black mb-1">Mensaje</label>
                 <textarea
                   name="message"
                   rows={4}
-                  defaultValue={`Hola! Quisiera saber más del producto ${inquiryProduct.name}. ¡Gracias!`}
+                  defaultValue={`Hola! Quisiera saber más del producto ${inquiryProduct?.name}. ¡Gracias!`}
                   className="w-full border border-gray-300 rounded px-3 py-2 text-black"
                 />
               </div>
-              <button type="submit" className="bg-[#007697] text-white px-4 py-2 rounded hover:bg-[#005c74]">
+              <button
+                type="submit"
+                className="bg-[#007697] text-white px-4 py-2 rounded hover:bg-[#005c74]"
+              >
                 Enviar mensaje
               </button>
             </form>
+
           </div>
         </div>
       )}

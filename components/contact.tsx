@@ -18,10 +18,24 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Formulario enviado:", formData);
-    setIsSubmitted(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        console.log("Email sent!");
+        setIsSubmitted(true);
+      } else {
+        console.error("Failed to send:", await response.json());
+      }
+    } catch (err) {
+      console.error("Error:", err);
+    }
   };
 
   return (
