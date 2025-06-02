@@ -25,24 +25,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-      className={`${poppins.variable} antialiased text-foreground bg-background flex flex-col min-h-screen font-poppins`}
-      >
-        <CartProvider>
-        <CartDrawer />
-        {/* Header for Navigation */}
-        <Header />
+    <html lang="es">
+  <head>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    {/* Optional: PNG fallback for browsers that don’t support SVG favicons */}
+    {/* <link rel="icon" href="/favicon.png" sizes="96x96" /> */}
+    <title>Reservagua</title>
+    <meta name="description" content="Nunca te quedes seco" />
+  </head>
+  <body className={`${poppins.variable} antialiased text-foreground bg-background flex flex-col min-h-screen font-poppins`}>
+    <CartProvider>
+      <CartDrawer />
+      <Header />
+      <main className="flex-grow container mx-auto p-4 md:p-8">{children}</main>
+      <Footer />
+    </CartProvider>
+  </body>
+</html>
 
-        {/* Main Content */}
-        <main className="flex-grow container mx-auto p-4 md:p-8">
-          {children}
-        </main>
-
-        {/* Footer at the bottom */}
-        <Footer />
-        </CartProvider>
-      </body>
-    </html>
   );
 }
