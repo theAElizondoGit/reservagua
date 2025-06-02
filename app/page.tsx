@@ -100,53 +100,88 @@ export default function Home() {
 
             {/* Mailchimp Form */}
             <form
-              action="https://gmail.us3.list-manage.com/subscribe/post?u=32b94a5dac9927710c0fdd16e&amp;id=6d8cd7eb00&amp;f_id=000f35e2f0"
-              method="post"
-              target="_blank"
-            >
-              <div className="flex flex-col items-center justify-center space-y-6">
-                <div className="w-full">
-                  <label
-                    htmlFor="mce-EMAIL"
-                    className="block mb-2 text-sm text-gray-300 text-center"
-                  >
-                    Correo Electrónico <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="EMAIL"
-                    id="mce-EMAIL"
-                    className="w-full px-4 py-3 rounded-md bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                    placeholder="Correo Electrónico"
-                    required
-                  />
-                </div>
-                <div className="w-full">
-                  <label
-                    htmlFor="mce-FNAME"
-                    className="block mb-2 text-sm text-gray-300 text-center"
-                  >
-                    Nombre
-                  </label>
-                  <input
-                    type="text"
-                    name="FNAME"
-                    id="mce-FNAME"
-                    className="w-full px-4 py-3 rounded-md bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                    placeholder="Nombre"
-                  />
-                </div>
-              </div>
+  action="https://gmail.us20.list-manage.com/subscribe/post?u=eab1a0d5b451dcbc3f7d9da1e&amp;id=ec9fa0c2ae&amp;f_id=00851ce0f0"
+  method="post"
+  target="_blank"
+>
+  <div className="flex flex-col items-center justify-center space-y-6">
 
-              <div className="mt-8">
-                <button
-                  type="submit"
-                  className="w-full py-4 rounded-md bg-blue-600 text-white font-bold hover:bg-blue-500 transition text-lg shadow-lg"
-                >
-                  Suscribirse
-                </button>
-              </div>
-            </form>
+    {/* Email */}
+    <div className="w-full">
+      <label htmlFor="mce-EMAIL" className="block mb-2 text-sm text-gray-300 text-center">
+        Correo Electrónico <span className="text-red-500">*</span>
+      </label>
+      <input
+        type="email"
+        name="EMAIL"
+        id="mce-EMAIL"
+        className="w-full px-4 py-3 rounded-md bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+        placeholder="Correo Electrónico"
+        required
+      />
+    </div>
+
+    {/* First Name */}
+    <div className="w-full">
+      <label htmlFor="mce-FNAME" className="block mb-2 text-sm text-gray-300 text-center">
+        Nombre
+      </label>
+      <input
+        type="text"
+        name="FNAME"
+        id="mce-FNAME"
+        className="w-full px-4 py-3 rounded-md bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+        placeholder="Nombre"
+      />
+    </div>
+
+    {/* Phone */}
+    <div className="w-full">
+      <label htmlFor="mce-PHONE" className="block mb-2 text-sm text-gray-300 text-center">
+        Teléfono
+      </label>
+      <input
+        type="text"
+        name="PHONE"
+        id="mce-PHONE"
+        className="w-full px-4 py-3 rounded-md bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+        placeholder="Teléfono"
+      />
+    </div>
+
+    {/* Company */}
+    <div className="w-full">
+      <label htmlFor="mce-COMPANY" className="block mb-2 text-sm text-gray-300 text-center">
+        Empresa
+      </label>
+      <input
+        type="text"
+        name="COMPANY"
+        id="mce-COMPANY"
+        className="w-full px-4 py-3 rounded-md bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+        placeholder="Empresa"
+      />
+    </div>
+  </div>
+
+  {/* Honeypot */}
+  <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
+    <input type="text" name="b_eab1a0d5b451dcbc3f7d9da1e_ec9fa0c2ae" tabIndex={-1} defaultValue="" />
+  </div>
+
+  {/* Submit */}
+  <div className="mt-8">
+    <button
+      type="submit"
+      name="subscribe"
+      id="mc-embedded-subscribe"
+      className="w-full py-4 rounded-md bg-blue-600 text-white font-bold hover:bg-blue-500 transition text-lg shadow-lg"
+    >
+      Suscribirse
+    </button>
+  </div>
+</form>
+
           </div>
         </div>
       )}
